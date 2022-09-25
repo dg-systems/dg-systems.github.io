@@ -1,0 +1,38 @@
+.header {
+  margin-bottom: 160px;
+  padding: 32px 64px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    img {
+      width: 169px;
+      height: 48px;
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+  &__menu-link {
+    color: $white;
+    padding: 8px 16px;
+    margin-left: 32px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $primary-light;
+    }
+    &--accent {
+      border: 1px solid $white;
+      border-radius: 32px;
+      &:hover {
+        background-color: $primary-light;
+        border: 1px solid $primary-light;
+        color: $white;
+      }
+    }
+  }
+}

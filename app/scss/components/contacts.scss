@@ -1,0 +1,44 @@
+.contacts {
+  &__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+  &__form {
+    margin-top: 128px;
+  }
+  &__form-inner {
+    display: flex;
+    margin-bottom: 32px;
+    input + input {
+      margin-left: 32px;
+    }
+  }
+  &__form-button {
+    margin-top: 32px;
+    display: block;
+    width: 100%;
+    background-color: $white;
+    border-radius: 32px;
+    padding: 16px;
+    color: $primary-light;
+  }
+  &__form-warning {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $primary-light;
+  }
+  &__social {
+    padding: 16px 24px;
+    background-color: $primary;
+    border-radius: 32px;
+    padding-bottom: 12px;
+  }
+}

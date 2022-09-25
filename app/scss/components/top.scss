@@ -1,0 +1,12 @@
+.top {
+  background-image: url('../images/global/top-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

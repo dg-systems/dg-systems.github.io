@@ -1,0 +1,21 @@
+.about {
+  background-image: url('../images/global/about-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__inner {
+    padding: 24px;
+    max-width: 512px;
+    width: 100%;
+    color: $primary;
+    text-align: left;
+  }
+  &__title,
+  &__subtitle {
+    text-align-last: left;
+  }
+}

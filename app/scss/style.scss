@@ -1,0 +1,15 @@
+// main
+@import './assets/fonts';
+@import './assets/vars';
+@import './assets/mixins';
+@import './assets/global';
+@import './assets/ui-kit';
+@import './assets/animations';
+@import 'libs';
+
+// components
+@import './components/header';
+@import './components/top';
+@import './components/about';
+@import './components/news';
+@import './components/contacts';
