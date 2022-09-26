@@ -2,11 +2,13 @@
   background-image: url('../images/global/about-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .fp-overflow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__inner {
     padding: 24px;
     max-width: 512px;
