@@ -5,17 +5,47 @@
         <div class="contacts__subtitle subtitle">Contact</div>
         <h2 class="contacts__title title-2 mb-8">Have a Question?</h2>
         <p class="contacts__text">
-          Leave a request and our specialist will contact you as soon as possible to help!
+          Leave a request and our specialist will contact you as soon as possible <br />
+          to help!
         </p>
 
-        <form class="contacts__form">
+        <form class="contacts__form" data-form="contacts">
           <div class="contacts__form-inner">
-            <input type="text" class="contacts__form-input default-input" placeholder="Name*" />
-            <input type="text" class="contacts__form-input default-input" placeholder="Name*" />
-            <input type="text" class="contacts__form-input default-input" placeholder="Name*" />
+            <div class="form-inputWrapper">
+              <input
+                type="text"
+                name="name"
+                class="contacts__form-input default-input"
+                placeholder="Name*"
+              />
+            </div>
+            <div class="form-inputWrapper">
+              <input
+                type="text"
+                name="phone"
+                class="contacts__form-input default-input"
+                placeholder="Phone Number*"
+                data-input="phoneMask"
+              />
+            </div>
+            <div class="form-inputWrapper">
+              <input
+                type="email"
+                name="email"
+                class="contacts__form-input default-input"
+                placeholder="Email"
+              />
+            </div>
           </div>
-          <input type="text" class="contacts__form-input default-input" placeholder="Name*" />
-          <button class="contacts__form-button">Send</button>
+          <div class="form-inputWrapper">
+            <input
+              type="text"
+              name="message"
+              class="contacts__form-input default-input"
+              placeholder="Message"
+            />
+          </div>
+          <button type="submit" class="contacts__form-button">Send</button>
           <p class="contacts__form-warning mt-8">
             By clicking “Send”, you agree to Terms of Service and acknowledge Privacy Policy.
           </p>
@@ -26,11 +56,11 @@
       <div class="contacts__box-inner">
         <div class="contacts__mail mb-32">
           <div class="contacts__mail-subtitle subtitle">Email</div>
-          <a href="#" class="contacts__mail-title title-3">info@davinci.ru</a>
+          <a href="#" class="contacts__mail-title title-3">info@davinci.ge</a>
         </div>
         <div class="contacts__phone mb-32">
           <div class="contacts__phone-subtitle subtitle">Phone Number</div>
-          <a href="#" class="contacts__phone-title title-3">(603) 555-0123</a>
+          <a href="tel:+995677320130" class="contacts__phone-title title-3">(+995) 677 32 01 30</a>
         </div>
         <a href="#" class="contacts__social">
           <svg

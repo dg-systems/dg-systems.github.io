@@ -1130,7 +1130,7 @@
     licenseKey: '',
     credits: {
       enabled: true,
-      label: 'developed by Vadim Losenkov',
+      label: 'developed by (Web Studio Name)',
       position: 'right',
     },
     //scrolling
@@ -5447,7 +5447,7 @@
     var waterMark = '\n        <div class="fp-watermark" style="'
       .concat(
         positionStyle,
-        '">\n            <a href="https://vadim-losenkov.ru" \n                rel="nofollow noopener" \n                target="_blank" \n                style="text-decoration:none; color: #000;">\n                    ',
+        '">\n            <a href="https://t.me/underundercover" \n                rel="nofollow noopener" \n                target="_blank" \n                style="text-decoration:none; color: #000;">\n                    ',
       )
       .concat(getOptions().credits.label, '\n            </a>\n        </div>\n    ');
     var lastSection = getLast(state.sections);

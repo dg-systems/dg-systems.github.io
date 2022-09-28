@@ -16,7 +16,7 @@
   &__form-inner {
     display: flex;
     margin-bottom: 32px;
-    input + input {
+    .form-inputWrapper + .form-inputWrapper {
       margin-left: 32px;
     }
   }
@@ -28,6 +28,10 @@
     border-radius: 32px;
     padding: 16px;
     color: $primary-light;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $gray;
+    }
   }
   &__form-warning {
     font-weight: 400;
@@ -38,5 +42,13 @@
   &__social {
     width: 115px;
     height: 45px;
+    svg rect {
+      transition: all 0.3s;
+    }
+    &:hover {
+      svg rect {
+        fill: $primary-light;
+      }
+    }
   }
 }

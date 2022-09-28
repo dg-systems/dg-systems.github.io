@@ -69,6 +69,14 @@
     z-index: 10;
     div {
       cursor: pointer;
+      svg path {
+        transition: all 0.3s;
+      }
+      &:hover {
+        svg path {
+          stroke: #fff;
+        }
+      }
     }
   }
 }

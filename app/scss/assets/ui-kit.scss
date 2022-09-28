@@ -249,6 +249,14 @@
 }
 
 // form styles
+.form-inputWrapper {
+  width: 100%;
+  .input-error {
+    color: $white;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
 .default-input {
   border: none;
   border-radius: 0;
@@ -262,7 +270,13 @@
   &::placeholder {
     color: rgba($white, 0.64);
   }
-  &:focus {
-    border-bottom: 2px solid $white;
+  &.invalid-field {
+    border-color: $red;
+    &::placeholder {
+      color: $red;
+    }
   }
+  // &:focus {
+  //   border-bottom: 1.5px solid $white;
+  // }
 }

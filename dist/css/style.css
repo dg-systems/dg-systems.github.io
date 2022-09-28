@@ -1058,6 +1058,15 @@ section {
   color: #00463c;
 }
 
+.form-inputWrapper {
+  width: 100%;
+}
+.form-inputWrapper .input-error {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+}
+
 .default-input {
   border: none;
   border-radius: 0;
@@ -1072,8 +1081,11 @@ section {
 .default-input::placeholder {
   color: rgba(255, 255, 255, 0.64);
 }
-.default-input:focus {
-  border-bottom: 2px solid #ffffff;
+.default-input.invalid-field {
+  border-color: #d02b2b;
+}
+.default-input.invalid-field::placeholder {
+  color: #d02b2b;
 }
 
 @keyframes blick-animation {
@@ -1211,6 +1223,12 @@ section {
 .product .product-navigation div {
   cursor: pointer;
 }
+.product .product-navigation div svg path {
+  transition: all 0.3s;
+}
+.product .product-navigation div:hover svg path {
+  stroke: #fff;
+}
 
 .about {
   background-image: url("../images/global/about-bg.jpg");
@@ -1244,6 +1262,8 @@ section {
   justify-content: center;
   align-items: center;
   padding: 24px;
+  width: 47.6%;
+  height: 95vh !important;
 }
 .news__item {
   max-width: 704px;
@@ -1290,6 +1310,18 @@ section {
   align-items: center;
   color: #ffffff;
 }
+.news .news-slider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+.news .news-slider .box-green {
+  margin-left: auto;
+}
 
 .contacts__inner {
   width: 100%;
@@ -1309,7 +1341,7 @@ section {
   display: flex;
   margin-bottom: 32px;
 }
-.contacts__form-inner input + input {
+.contacts__form-inner .form-inputWrapper + .form-inputWrapper {
   margin-left: 32px;
 }
 .contacts__form-button {
@@ -1320,6 +1352,10 @@ section {
   border-radius: 32px;
   padding: 16px;
   color: #006657;
+  transition: all 0.3s;
+}
+.contacts__form-button:hover {
+  background-color: #e0e0e0;
 }
 .contacts__form-warning {
   font-weight: 400;
@@ -1330,4 +1366,10 @@ section {
 .contacts__social {
   width: 115px;
   height: 45px;
+}
+.contacts__social svg rect {
+  transition: all 0.3s;
+}
+.contacts__social:hover svg rect {
+  fill: #006657;
 }
