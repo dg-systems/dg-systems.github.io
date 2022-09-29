@@ -11,8 +11,4 @@ function clearAnimations() {
 
 export function animateSection(section) {
   // clearAnimations();
-  // switch (section) {
-  //   case value:
-  //     break;
-  // }
 }

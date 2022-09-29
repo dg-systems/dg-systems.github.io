@@ -1,4 +1,5 @@
 import './sliders.js';
+import './modals.js';
 import './form.js';
 
 import { isWebp } from './utills.js';

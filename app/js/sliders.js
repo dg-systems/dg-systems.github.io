@@ -33,6 +33,8 @@ const newsSlider = new Swiper('.news-slider', {
   },
 });
 
+// newsSlider.el.querySelectorAll('.swiper-slide').forEach(($slide) => {});
+
 const pageSlider = new fullpage('#fullpage', {
   autoScrolling: true,
   scrollHorizontally: true,

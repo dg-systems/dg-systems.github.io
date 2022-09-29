@@ -3,7 +3,24 @@ import axios from 'axios';
 import 'jquery-validation';
 import './plugins/inputmask.js';
 
-$('[data-form="contacts"]').validate({
+const $contactsForm = $('[data-form="contacts"]');
+const $successForm = document.querySelector('.success-form');
+
+$successForm.addEventListener('click', (e) => {
+  if (e.target.closest('[data-success="close"]')) {
+    const $fields = $contactsForm.find('input,textarea*');
+    $fields.each(function () {
+      $(this).val('');
+    });
+
+    $successForm.style.opacity = '0';
+    setTimeout(() => {
+      $successForm.style.zIndex = '-1';
+    }, 300);
+  }
+});
+
+$contactsForm.validate({
   errorClass: 'invalid-field',
   rules: {
     email: {
@@ -41,25 +58,26 @@ $('[data-form="contacts"]').validate({
       minlength: $.validator.format(`<p class="input-error">min {0} symbols</p>`),
     },
   },
-  // the errorPlacement has to take the table layout into account
-  // specifying a submitHandler prevents the default submit, good for the demo
-  submitHandler: function (e) {
-    console.log('submit');
-    // $('.open-popup').magnificPopup('close');
+
+  submitHandler: function () {
     sendMessage(this.successList);
-    // setTimeout(() => {
-    //   $('.open-popup-thanks').magnificPopup('open');
-    // }, 800);
+
+    $successForm.style.zIndex = '10';
+    setTimeout(() => {
+      $successForm.style.opacity = '1';
+    }, 300);
   },
 });
 
 function sendMessage($items) {
-  const message = `https://api.telegram.org/bot5469842101:AAFdCBpfS22tPuRJewJb1yvKsgkckecC1GY/sendMessage?chat_id=@dg_systems_messages_hashhidiaud&text=
-%2APhone%2A: ${$items[1].value}%0A
-%2AE-mail%2A: ${$items[2].value}%0A
-%2AName%2A: ${$items[0].value}%0A%0A
-%2AMessage%2A: ${$items[3].value}&parse_mode=Markdown
-`;
+  const message = `
+    https://api.telegram.org/bot5469842101:AAFdCBpfS22tPuRJewJb1yvKsgkckecC1GY/sendMessage?chat_id=@dg_systems_messages_hashhidiaud&text=
+    %2APhone%2A: ${$items[1].value}%0A
+    %2AE-mail%2A: ${$items[2].value}%0A
+    %2AName%2A: ${$items[0].value}%0A%0A
+    %2AMessage%2A: ${$items[3].value}&parse_mode=Markdown
+  `;
+
   axios.get(message);
 }
 

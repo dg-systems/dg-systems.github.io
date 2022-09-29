@@ -31,13 +31,14 @@
 
     &-image img {
       width: 960px;
-      height: 35.4vmax;
+      height: 82vh;
       object-fit: cover;
     }
     &-info {
-      padding: 64px 50px;
+      padding: 0px 50px;
       display: flex;
       justify-content: space-between;
+      height: 18vh;
     }
     &-block {
       width: 100%;

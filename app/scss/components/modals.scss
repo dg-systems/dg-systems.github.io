@@ -1,0 +1,24 @@
+.readMore-popup {
+  .mfp-close {
+    display: none;
+  }
+
+  margin: 0px auto;
+  background: #00463c;
+  border-radius: 16px;
+  padding: 50px 64px;
+  max-width: 1296px;
+
+  &__close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    cursor: pointer;
+  }
+  &__image img {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100%;
+    height: 320px;
+  }
+}
