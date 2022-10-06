@@ -26,16 +26,23 @@ const productItemsSlider = new Swiper('.product__items-slider', {
   },
 });
 const newsSlider = new Swiper('.news-slider', {
-  direction: 'vertical',
+  direction: 'horizontal',
   modules: [Mousewheel],
-  mousewheel: {
-    invert: false,
+  mousewheel: false,
+
+  breakpoints: {
+    800: {
+      direction: 'vertical',
+    },
+    mousewheel: {
+      invert: false,
+    },
   },
 });
 
 // newsSlider.el.querySelectorAll('.swiper-slide').forEach(($slide) => {});
 
-const pageSlider = new fullpage('#fullpage', {
+export const pageSlider = new fullpage('#fullpage', {
   autoScrolling: true,
   scrollHorizontally: true,
 
@@ -48,19 +55,21 @@ const pageSlider = new fullpage('#fullpage', {
 });
 
 function newsFunction(section, direction) {
-  if (section === 'product' && direction === 'down') {
-    pageSlider.setAllowScrolling(false);
-    // pageSlider.setAllowScrolling(false, 'down');
-    newsSlider.on('slideChange', (e) => {
-      e.activeIndex === 2 && setTimeout(() => pageSlider.setAllowScrolling(true), 300);
-    });
-  }
+  if (window.innerWidth <= 800) {
+    if (section === 'product' && direction === 'down') {
+      pageSlider.setAllowScrolling(false);
+      // pageSlider.setAllowScrolling(false, 'down');
+      newsSlider.on('slideChange', (e) => {
+        e.activeIndex === 2 && setTimeout(() => pageSlider.setAllowScrolling(true), 300);
+      });
+    }
 
-  if (section === 'contacts') {
-    pageSlider.setAllowScrolling(false);
-    newsSlider.on('slideChange', (e) => {
-      e.activeIndex === 0 && setTimeout(() => pageSlider.setAllowScrolling(true), 300);
-    });
+    if (section === 'contacts') {
+      pageSlider.setAllowScrolling(false);
+      newsSlider.on('slideChange', (e) => {
+        e.activeIndex === 0 && setTimeout(() => pageSlider.setAllowScrolling(true), 300);
+      });
+    }
   }
 }
 

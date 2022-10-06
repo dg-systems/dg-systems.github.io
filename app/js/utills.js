@@ -14,14 +14,3 @@ export function isWebp() {
     document.documentElement.classList.add(className);
   });
 }
-
-const documentHeight = () => {
-  const doc = document.documentElement;
-  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
-};
-
-['orentationchange', 'resize', 'load'].forEach((method) =>
-  window.addEventListener(method, (e) => {
-    documentHeight();
-  }),
-);

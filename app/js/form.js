@@ -20,6 +20,11 @@ $successForm.addEventListener('click', (e) => {
   }
 });
 
+const message = ($items) => `
+  https://api.telegram.org/bot5469842101:AAFdCBpfS22tPuRJewJb1yvKsgkckecC1GY/sendMessage?chat_id=@dg_systems_messages_hashhidiaud&text=%2APhone%2A: ${$items[1].value}%0A%2AE-mail%2A: ${$items[2].value}%0A%2AName%2A: ${$items[0].value}%0A%0A%2AMessage%2A: ${$items[3].value}&parse_mode=Markdown
+`;
+const sendMessage = ($items) => axios.get(message($items));
+
 $contactsForm.validate({
   errorClass: 'invalid-field',
   rules: {
@@ -69,17 +74,4 @@ $contactsForm.validate({
   },
 });
 
-function sendMessage($items) {
-  const message = `
-    https://api.telegram.org/bot5469842101:AAFdCBpfS22tPuRJewJb1yvKsgkckecC1GY/sendMessage?chat_id=@dg_systems_messages_hashhidiaud&text=
-    %2APhone%2A: ${$items[1].value}%0A
-    %2AE-mail%2A: ${$items[2].value}%0A
-    %2AName%2A: ${$items[0].value}%0A%0A
-    %2AMessage%2A: ${$items[3].value}&parse_mode=Markdown
-  `;
-
-  axios.get(message);
-}
-
-const im = new Inputmask('  +\\9\\95 (999) 999 999');
-im.mask('[data-input="phoneMask"]');
+new Inputmask('+\\9\\95 (999) 999 999').mask('[data-input="phoneMask"]');

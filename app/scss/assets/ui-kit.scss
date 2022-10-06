@@ -88,9 +88,9 @@
   text-align: center;
   color: $white;
   margin-bottom: 48px;
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: 800px) {
     font-size: 40px;
-    line-height: 100%;
+    line-height: 52px;
     margin-bottom: 32px;
   }
 }

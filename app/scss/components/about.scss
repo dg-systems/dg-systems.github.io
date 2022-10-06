@@ -20,4 +20,27 @@
   &__subtitle {
     text-align-last: left;
   }
+  &-mobile__bg {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    position: relative;
+    background: $beige;
+    &__text {
+      opacity: 0.76;
+    }
+    &-mobile__bg {
+      position: absolute;
+      display: block;
+      &.item-1 {
+        top: -70px;
+        left: 0;
+      }
+      &.item-2 {
+        bottom: -60px;
+        right: 0;
+      }
+    }
+  }
 }

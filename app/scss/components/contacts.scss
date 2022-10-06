@@ -52,6 +52,30 @@
       }
     }
   }
+  @media (max-width: 800px) {
+    &__inner {
+      display: block;
+    }
+    &__box {
+      width: 100%;
+    }
+    &__title {
+      margin-bottom: 24px;
+    }
+    &__form {
+      margin-top: 40px;
+    }
+    &__text {
+      font-size: 14px;
+    }
+    &__form-inner {
+      display: block;
+      .form-inputWrapper + .form-inputWrapper {
+        margin-left: 0;
+        margin-top: 32px;
+      }
+    }
+  }
 }
 
 .success-form {

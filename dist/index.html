@@ -19,7 +19,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
+  <link rel="stylesheet" data-stylesheet href="css/style.min.css" type="text/css" media="all" />
   <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon" />
 </head>
 
@@ -31,16 +31,28 @@
   <div class="header-container">
     <div class="header__inner">
       <a href="#home" class="header__logo">
-        <img src="images/global/logo-pc.svg" alt="" />
+        <img class="pc" src="images/global/logo-pc.svg" alt="" />
+        <img class="mobile" src="images/global/logo-mobile.svg" alt="" />
       </a>
       <div class="header__menu">
         <a href="#product" class="header__menu-link"> Products </a>
         <a href="#about" class="header__menu-link"> About Us </a>
         <a href="#contacts" class="header__menu-link header__menu-link--accent"> Contact Us </a>
       </div>
+      <div class="header__mobile-burger">
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </div>
 </header>
+<div class="header-mobile">
+  <div class="header-mobile__links">
+    <a href="#product" class="header-mobile__link title-1"> Products </a>
+    <a href="#about" class="header-mobile__link title-1"> About Us </a>
+    <a href="#contacts" class="header-mobile__link title-1"> Contact Us </a>
+  </div>
+</div>
 
 
     <div class="top__inner container">
@@ -57,6 +69,12 @@
 
       <!-- About Section -->
       <section class="about section" data-anchor="about">
+  <div class="about-mobile__bg item-1">
+    <img src="images/global/about-mobile-bg-1.png" alt="" />
+  </div>
+  <div class="about-mobile__bg item-2">
+    <img src="images/global/about-mobile-bg-2.png" alt="" />
+  </div>
   <div class="about__inner">
     <div class="about__subtitle subtitle">About Us</div>
     <h3 class="about__title title-3">Who Are We?</h3>
@@ -327,7 +345,7 @@
       <!-- News Section -->
       <section class="news section" data-anchor="news">
   <div class="news__inner">
-    <div class="news__box box-beige">
+    <div class="news__box news-info box-beige">
       <div class="news__box-inner">
         <div class="news__subtitle subtitle">News</div>
         <h2 class="news__title title-2">What’s New?</h2>
@@ -489,8 +507,7 @@
         <div class="contacts__subtitle subtitle">Contact</div>
         <h2 class="contacts__title title-2 mb-8">Have a Question?</h2>
         <p class="contacts__text">
-          Leave a request and our specialist will contact you as soon as possible <br />
-          to help!
+          Leave a request and our specialist will contact you as soon as possible to help!
         </p>
 
         <form class="contacts__form" data-form="contacts">
@@ -678,6 +695,6 @@
 </div>
 
     </div>
-    <script src="js/main.min.js"></script>
+    <script src="js/main.min.js" defer></script>
   </body>
 </html>

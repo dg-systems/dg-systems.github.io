@@ -76,4 +76,18 @@
       // width: 100%;
     }
   }
+
+  @media (max-width: 800px) {
+    .news-slider {
+      position: relative;
+      // display: none;
+    }
+    &__box {
+      width: auto !important;
+      height: auto !important;
+    }
+    .news-info {
+      display: none;
+    }
+  }
 }
