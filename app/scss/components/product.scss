@@ -1,4 +1,7 @@
 .product {
+  &-mobile__inner {
+    display: none;
+  }
   &__inner {
     height: 100%;
     display: flex;
@@ -76,6 +79,94 @@
       &:hover {
         svg path {
           stroke: #fff;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .fp-overflow {
+      overflow-x: hidden;
+    }
+    &__inner {
+      display: none;
+    }
+    &-mobile {
+      overflow: hidden;
+      &__inner {
+        display: block;
+        background-color: $primary;
+        padding-bottom: 128px;
+        &.news {
+          background-color: $beige;
+          color: $primary;
+
+          .title-1 {
+            color: $primary;
+          }
+        }
+      }
+      &__item-wrapper {
+        padding: 0 24px;
+        .default-link-white {
+          margin-top: 40px;
+        }
+      }
+      &__item-image {
+        height: 360px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      &__item-benefit {
+        display: flex;
+        align-items: center;
+        svg {
+          opacity: 0.64;
+        }
+      }
+      &__item-tag {
+        background-color: $primary-light;
+        background: #006657;
+        border-radius: 32px;
+        padding: 8px 16px;
+        display: inline-block;
+        color: $white;
+      }
+      &__item-title {
+        text-align: left;
+      }
+      &__slider-navigation {
+        display: flex;
+        margin: 0 32px;
+        justify-content: space-between;
+        align-items: center;
+        .product-mobile__slider-navigationPrev,
+        .product-mobile__slider-navigationNext {
+          height: 40px;
+          width: 40px;
+          cursor: pointer;
+        }
+        .product-mobile__slider-pagination {
+          width: 100%;
+          margin: 0 52px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            transition: all 0.3s;
+            background-color: $primary-light;
+            border-radius: 50%;
+            display: block;
+
+            &.swiper-pagination-bullet-active {
+              background-color: #fff;
+            }
+          }
         }
       }
     }

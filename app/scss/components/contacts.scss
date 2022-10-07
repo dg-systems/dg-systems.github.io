@@ -58,6 +58,29 @@
     }
     &__box {
       width: 100%;
+      display: block;
+      &.box-beige {
+        background-color: $primary;
+        color: $white;
+        height: auto;
+        padding-bottom: 128px;
+        margin-top: -70px;
+        .title-1,
+        .title-2,
+        .title-3,
+        .subtitle {
+          color: $white;
+        }
+        .title-3 {
+          font-size: 32px;
+        }
+        svg rect {
+          fill: $white;
+        }
+        svg path {
+          fill: $primary;
+        }
+      }
     }
     &__title {
       margin-bottom: 24px;

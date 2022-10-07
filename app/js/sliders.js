@@ -1,6 +1,6 @@
 import './plugins/fullpage.js';
 
-import Swiper, { Controller, Navigation, Mousewheel } from 'swiper';
+import Swiper, { Controller, Navigation, Pagination, Mousewheel } from 'swiper';
 import { animateSection } from './animations.js';
 
 const productInfoSlider = new Swiper('.product__info-slider', {
@@ -40,18 +40,44 @@ const newsSlider = new Swiper('.news-slider', {
   },
 });
 
-// newsSlider.el.querySelectorAll('.swiper-slide').forEach(($slide) => {});
+const productMobileSlider = new Swiper('.product-mobile__slider', {
+  spaceBetween: 1,
+  modules: [Pagination, Navigation],
+  loop: true,
+  navigation: {
+    nextEl: '.product-mobile__slider-navigationNext',
+    prevEl: '.product-mobile__slider-navigationPrev',
+  },
+  pagination: {
+    el: '.product-mobile__slider-pagination',
+    type: 'bullets',
+  },
+});
+
+const newsMobileSlider = new Swiper('.news-mobile__slider', {
+  spaceBetween: 1,
+  modules: [Pagination, Navigation],
+  loop: true,
+  navigation: {
+    nextEl: '.news-mobile__slider-navigationNext',
+    prevEl: '.news-mobile__slider-navigationPrev',
+  },
+  pagination: {
+    el: '.news-mobile__slider-pagination',
+    type: 'bullets',
+  },
+});
 
 export const pageSlider = new fullpage('#fullpage', {
   autoScrolling: true,
   scrollHorizontally: true,
 
-  onLeave: function (_a, _b, direction) {
-    newsFunction(this.anchor, direction);
-  },
-  afterLoad: function () {
-    animateSection(this.anchor);
-  },
+  // onLeave: function (_a, _b, direction) {
+  //   newsFunction(this.anchor, direction);
+  // },
+  // afterLoad: function () {
+  //   animateSection(this.anchor);
+  // },
 });
 
 function newsFunction(section, direction) {
