@@ -15,7 +15,10 @@
     width: 47.6%;
     height: 95vh !important;
   }
-
+  &__button {
+    position: relative;
+    z-index: 1000;
+  }
   &__item {
     max-width: 704px;
     width: 100%;

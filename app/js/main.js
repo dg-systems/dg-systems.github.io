@@ -30,23 +30,27 @@ const documentHeight = () => {
 
 const $burgerButton = document.querySelector('.header__mobile-burger');
 const $headerMobile = document.querySelector('.header-mobile');
-let flag = false;
 
 const toggleMobileHeader = () => {
-  $burgerButton.classList.toggle('active');
-  $headerMobile.classList.toggle('active');
+  if ($burgerButton.classList.contains('active')) {
+    $burgerButton.classList.remove('active');
+    $headerMobile.classList.remove('active');
 
-  pageSlider.setAllowScrolling(flag);
-  flag = !flag;
+    pageSlider.setAllowScrolling(true);
+  } else {
+    $burgerButton.classList.add('active');
+    $headerMobile.classList.add('active');
+
+    pageSlider.setAllowScrolling(false);
+  }
 };
 
 $burgerButton.addEventListener('click', toggleMobileHeader);
 document.querySelector('.header-mobile__links').addEventListener('click', (e) => {
   if (e.target.closest('.header-mobile__link')) {
-    $burgerButton.classList.toggle('active');
-    $headerMobile.classList.toggle('active');
+    $burgerButton.classList.remove('active');
+    $headerMobile.classList.remove('active');
 
-    flag = true;
-    pageSlider.setAllowScrolling(flag);
+    pageSlider.setAllowScrolling(true);
   }
 });

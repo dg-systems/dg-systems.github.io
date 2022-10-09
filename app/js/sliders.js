@@ -26,17 +26,11 @@ const productItemsSlider = new Swiper('.product__items-slider', {
   },
 });
 const newsSlider = new Swiper('.news-slider', {
-  direction: 'horizontal',
   modules: [Mousewheel],
-  mousewheel: false,
-
-  breakpoints: {
-    800: {
-      direction: 'vertical',
-    },
-    mousewheel: {
-      invert: false,
-    },
+  mousewheel: true,
+  direction: 'vertical',
+  mousewheel: {
+    invert: false,
   },
 });
 
@@ -72,19 +66,19 @@ export const pageSlider = new fullpage('#fullpage', {
   autoScrolling: true,
   scrollHorizontally: true,
 
-  // onLeave: function (_a, _b, direction) {
-  //   newsFunction(this.anchor, direction);
-  // },
-  // afterLoad: function () {
-  //   animateSection(this.anchor);
-  // },
+  onLeave: function (_a, _b, direction) {
+    newsFunction(this.anchor, direction);
+  },
+  afterLoad: function () {
+    animateSection(this.anchor);
+  },
 });
 
 function newsFunction(section, direction) {
-  if (window.innerWidth <= 800) {
+  if (window.innerWidth > 800) {
     if (section === 'product' && direction === 'down') {
       pageSlider.setAllowScrolling(false);
-      // pageSlider.setAllowScrolling(false, 'down');
+      pageSlider.setAllowScrolling(false, 'down');
       newsSlider.on('slideChange', (e) => {
         e.activeIndex === 2 && setTimeout(() => pageSlider.setAllowScrolling(true), 300);
       });

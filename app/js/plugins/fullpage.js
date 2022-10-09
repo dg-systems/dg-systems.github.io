@@ -1129,7 +1129,7 @@
     hybrid: false,
     licenseKey: '',
     credits: {
-      enabled: true,
+      enabled: false,
       label: 'developed by (Web Studio Name)',
       position: 'right',
     },

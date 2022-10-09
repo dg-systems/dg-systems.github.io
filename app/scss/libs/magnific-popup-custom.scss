@@ -49,3 +49,8 @@
   background-color: rgba(0, 8, 12, 0.67);
   backdrop-filter: blur(7px);
 }
+@media (max-width: 800px) {
+  .mfp-container {
+    padding: 0;
+  }
+}
